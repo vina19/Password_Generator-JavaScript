@@ -17,6 +17,29 @@ function generatePassword() {
     let userUppercase = confirm("Would you like to include uppercase letters in your password? Click OK(yes)/Cancel(no).");
     let userLowercase = confirm("Would you like to include lowercase letters in your password? Click OK(yes)/Cancel(no).");
     let userNumbers = confirm("WOuld you like to include numbers in your password? Click OK(yes)/Cancel(no).");
+    
+    let password = [];
+
+    if (userSpecialChar){
+      password = password.concat(specialChar);
+    }
+    if (userUppercase){
+      password = password.concat(uppercaseAlphabets);
+    }
+    if (userLowercase){
+      password = password.concat(lowercaseAlphabets);
+    }
+    if (userNumbers){
+      password = password.concat(numbers);
+    }
+
+    let pass = "";
+
+    for(let i=0; i < passLength; i++){
+      pass += password[Math.floor(Math.random() * password.length)];
+    }
+    return pass;
+  }
 }
   
 // Write password to the #password input
