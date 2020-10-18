@@ -5,15 +5,16 @@ let generateBtn = document.querySelector("#generate");
 let specialChar = "!\"#$%&'()*+\,-./:;<=>?@[\\]^_`{|}~";
 let uppercaseAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowercaseAlphabets = "abcdefghijklmnopqrstuvwxyz";
-let numbers = ["hello"];
-  //"0123456789";
-
-let userPasswordChoice = "";
-console.log(userPasswordChoice);
+let numbers = "0123456789";
 
 // Generate password function.
 function generatePassword() {
 
+  let userPasswordChoice = "";
+
+  // Create a new variable for a place to the password result.
+  let resultUserPassword = "";
+  
   // Ask the user for the password length.
   let userPassLengthInput = prompt("Please enter how long would you like your password to be (Must be between 8-128 characters): ");
 
@@ -48,10 +49,6 @@ function generatePassword() {
       userPasswordChoice += numbers;
     }
   }
-
-  // Create a new variable for a place to the password result.
-  let resultUserPassword = "";
-  console.log(resultUserPassword);
 
   // Looping the password array and get a random characters.
   for (let i=0; i < userPassLengthInput; i++) {
